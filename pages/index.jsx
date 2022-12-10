@@ -14,11 +14,12 @@ export default function Home() {
     slidesToScroll: 1,
     arrows: false,
     vertical: true,
+    verticalSwiping: true,
     initialSlide: 2,
   };
   return (
     <div className="font-raleway bg-black w-screen h-screen">
-      <div id="slider">
+      <div id="slider" className="grid w-full h-full place-content-center">
         <Slider {...settings}>
           {projects.map((project) => (
             <Link
