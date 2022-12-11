@@ -18,7 +18,9 @@ export default function ProjectsList(props) {
             </div>
           </Link>
           <h1 className="font-bold text-xl">{project.name}</h1>
-          <h2 className="italic font-thin">{project.roles}</h2>
+          <h2 className="italic font-thin">
+            {project.roleSummary.toLowerCase()}
+          </h2>
         </div>
       ))}
     </div>

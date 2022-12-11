@@ -1,5 +1,5 @@
-import Landing from '../components/landing/Landing';
-import ProjectsList from '../components/projects-list/ProjectsList';
+import Landing from '../components/Landing';
+import ProjectsList from '../components/ProjectsList';
 import projects from '../data/projects';
 
 export default function Home() {
