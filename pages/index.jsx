@@ -1,43 +1,28 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import Slider from 'react-slick';
+import Link from 'next/link';
+import Landing from '../components/landing/Landing';
 import projects from '../data/projects';
 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
 export default function Home() {
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-    vertical: true,
-    verticalSwiping: true,
-    initialSlide: 2,
-  };
   return (
-    <div className="font-raleway bg-black w-screen h-screen">
-      <div id="slider" className="grid w-full h-full place-content-center">
-        <Slider {...settings}>
-          {projects.map((project) => (
-            <Link
-              href={`/projects/${project.id}`}
-              className="font-bold text-offWhite"
-              key={project.id}
-            >
-              <div className="relative w-64 h-40 mx-auto overflow-hidden rounded-lg">
+    <div className="font-raleway bg-black w-screen text-offWhite">
+      <Landing />
+      <div className="w-72 mx-auto">
+        {projects.map((project) => (
+          <div key={project.id} className="py-7">
+            <Link href={`/projects/${project.id}`}>
+              <div className="relative w-full h-96 rounded-lg my-2">
                 <Image
                   src={project.display_image}
-                  alt="display image"
                   fill="true"
-                  className=" object-cover"
+                  className=" object-cover rounded-lg"
                 />
               </div>
             </Link>
-          ))}
-        </Slider>
+            <h1 className="font-bold text-xl">{project.name}</h1>
+            <h2 className="italic font-thin">{project.roles}</h2>
+          </div>
+        ))}
       </div>
     </div>
   );

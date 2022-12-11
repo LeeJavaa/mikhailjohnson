@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav className="absolute top-0 left-0 right-0 flex mx-auto justify-between w-80 pt-6 z-10">
+    <nav className="fixed top-0 left-0 right-0 flex mx-auto justify-between w-80 pt-6 z-10">
       <Link href="/" className="text-offWhite font-bold text-xl">
         mikh<span className="italic">a</span>il j
         <span className="italic">o</span>hns<span className="italic">o</span>n.
