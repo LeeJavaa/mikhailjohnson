@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import projects from '../../data/projects';
 import Navbar from '../../components/Navbar';
@@ -6,12 +5,7 @@ import NextProject from '../../components/NextProject';
 import Gallery from '../../components/Gallery';
 import TextCarousel from '../../components/TextCarousel';
 
-export default function Detail() {
-  const router = useRouter();
-  const { id } = router.query;
-  const project = projects.find((x) => x.id === parseInt(id, 10));
-  const nextProject = projects.find((x) => x.id === parseInt(id, 10) + 1);
-
+export default function Detail({ project, nextProject }) {
   return (
     <main className="w-screen h-fit bg-black text-offWhite">
       <div className="w-80 mx-auto">
@@ -67,3 +61,26 @@ Detail.getLayout = function getLayout(page) {
     </>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = projects.map((project) => ({
+    params: { id: project.id.toString() },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  // eslint-disable-next-line prefer-destructuring
+  const id = context.params.id;
+  const project = projects.find((x) => x.id === parseInt(id, 10));
+  const nextProject =
+    projects.find((x) => x.id === parseInt(id, 10) + 1) || false;
+  return {
+    // Passed to the page component as props
+    props: { project, nextProject },
+  };
+}

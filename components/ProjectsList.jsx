@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import projects from '../data/projects';
 
-export default function ProjectsList(props) {
-  const { projects } = props;
-
+export default function ProjectsList() {
   return (
     <div className="w-72 mx-auto">
       {projects.map((project) => (
