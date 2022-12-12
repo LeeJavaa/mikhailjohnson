@@ -40,7 +40,7 @@ export default function Detail({ project, nextProject }) {
         <TextCarousel project={project} />
         <div id="quote-container" className="w-full my-12 grid gap-2">
           <h1 className="font-bold text-5xl">
-            "{project.quote.toLowerCase()}"
+            &quot;{project.quote.toLowerCase()}&quot;
           </h1>
           <p className="font-light">
             mikh<span className="italic">a</span>il

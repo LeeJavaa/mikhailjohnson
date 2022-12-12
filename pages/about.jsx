@@ -18,6 +18,7 @@ export default function About() {
           some of the most popular festivals and events across the world.
         </p>
         <h3 className="font-bold text-lg">Contact</h3>
+        {/* eslint-disable react/jsx-no-constructed-context-values */}
         <ul className="relative grid gap-5 pl-16">
           <li className="flex">
             email
@@ -54,6 +55,7 @@ export default function About() {
             </span>
           </li>
         </ul>
+        {/* eslint-enable react/jsx-no-constructed-context-values */}
         <h3 className="font-bold text-lg">Clients</h3>
         <ul className="relative grid gap-5 pl-16">
           <li className="flex">red bull</li>
