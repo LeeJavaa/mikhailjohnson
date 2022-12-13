@@ -44,7 +44,7 @@ const projects = [
     about:
       "\"We've transported you to whirling galaxies but our Toybox is still bursting at the seams... don't let gravity suck you in; we're slaying dragons and we're taking you with us... are you ready player one?\"\nToybox is a dance music festival which brings in the best of both local and international artist to peform in front of thousands of festival goers. In this edition, Mikhail led the way with the set design, fabrication and assembly, creating one of Toybox's most memorable stages to date.",
     quote:
-      'I wanted build a giant oldschool arcade machine. Anyway. Compromise is the lesson of the day.',
+      'I wanted to build a giant oldschool arcade machine. Anyway. Compromise is the lesson of the day.',
     display_image: '/static/images/toybox/display.jpg',
     display_caption: '8-bit Arcade Stage',
     carousel_image: '/static/images/toybox/carousel.jpg',
