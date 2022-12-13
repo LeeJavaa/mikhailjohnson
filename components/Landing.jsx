@@ -1,6 +1,6 @@
 export default function Landing() {
   return (
-    <div className="w-full h-screen font-bold text-xl">
+    <div className="w-full h-screen font-bold text-xl lg:text-4xl">
       <div
         id="english"
         className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 animate-text-loop1"
