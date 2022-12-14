@@ -1,9 +1,16 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Navbar(props) {
   const { current } = props;
+  const path = useRouter().asPath;
   return (
-    <nav className="fixed top-0 left-0 right-0 flex mx-auto justify-between w-80 pt-6 z-10 lg:w-11/12 lg:pt-9">
+    <nav
+      className={`fixed top-0 left-0 right-0 flex mx-auto justify-between w-80 pt-6 z-10 lg:w-11/12 lg:pt-9 ${
+        path.toLowerCase() === '/' ? 'opacity-0 animate-floatIn' : 'opacity-100'
+      }`}
+      style={{ animationDelay: '2.5s', animationFillMode: 'forwards' }}
+    >
       {current === 'about' && (
         <Link
           href="/"
