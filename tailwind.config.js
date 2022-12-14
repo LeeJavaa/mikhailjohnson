@@ -14,6 +14,8 @@ module.exports = {
         'text-loop1': 'textLoop1 9s ease-in-out infinite',
         'text-loop2': 'textLoop2 9s ease-in-out infinite',
         'text-loop3': 'textLoop3 9s ease-in-out infinite',
+        marque: 'moveRtl 6s linear infinite',
+        marque2: 'moveRtl2 15s linear infinite',
       },
       keyframes: {
         textLoop1: {
@@ -64,6 +66,14 @@ module.exports = {
           '66%': { transform: 'translate(-50%, -50%)', opacity: '100%' },
           '89%': { transform: 'translate(-50%, -50%)', opacity: '100%' },
           '100%': { transform: 'translate(-50%, -60%)', opacity: '0%' },
+        },
+        moveRtl: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        moveRtl2: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-600%)' },
         },
       },
     },
