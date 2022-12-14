@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 export default function CustomCursor() {
   const cursorRef = useRef(null);
   const path = useRouter().asPath;
-  console.log(path);
 
   useEffect(() => {
     document.addEventListener('mousemove', (event) => {

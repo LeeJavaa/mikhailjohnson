@@ -2,7 +2,6 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import CustomCursor from '../components/CustomCursor';
 
 export default function About() {
   return (
