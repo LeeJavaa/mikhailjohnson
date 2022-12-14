@@ -1,9 +1,13 @@
 export default function Landing() {
   return (
-    <div className="w-full h-screen font-bold text-xl lg:text-4xl">
+    <div
+      className="w-full h-screen font-bold text-xl lg:text-4xl animate-floatIn opacity-0"
+      style={{ animationFillMode: 'forwards', animationDelay: '2.5s' }}
+    >
       <div
         id="english"
         className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 animate-text-loop1"
+        style={{ animationDelay: '2.5s' }}
       >
         <p>
           <span className="italic font-normal">cape town </span>- b
@@ -17,6 +21,7 @@ export default function Landing() {
       <div
         id="afrikaans"
         className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 animate-text-loop2"
+        style={{ animationDelay: '2.5s' }}
       >
         <p>
           <span className="italic font-normal">kaapstad </span> - geb
@@ -29,6 +34,7 @@ export default function Landing() {
       <div
         id="xhosa"
         className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 animate-text-loop3"
+        style={{ animationDelay: '2.5s' }}
       >
         <p>
           uzalelwe <span className="italic font-normal">ekapa,</span>
