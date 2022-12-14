@@ -31,6 +31,7 @@ export default function ProjectNav(props) {
           src={navProject.display_image}
           fill="true"
           className="object-cover scale-110 blur-sm opacity-80"
+          alt="Image of project to navigate to"
         />
       </div>
     </section>

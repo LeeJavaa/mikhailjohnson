@@ -14,6 +14,7 @@ export default function Detail({ project, nextProject, prevProject }) {
             src={project.display_image}
             fill="true"
             className="object-cover rounded-lg"
+            alt="Project Main Display Image"
           />
         </div>
         <div>

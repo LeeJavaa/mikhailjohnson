@@ -16,6 +16,7 @@ export default function Gallery(props) {
           src={project.gallery[0]}
           fill="true"
           className="object-cover rounded-lg"
+          alt="Third Project Image"
         />
       </div>
       <div
@@ -26,6 +27,7 @@ export default function Gallery(props) {
           src={project.gallery[1]}
           fill="true"
           className="object-cover rounded-lg"
+          alt="Fourth Project Image"
         />
       </div>
       <div
@@ -36,6 +38,7 @@ export default function Gallery(props) {
           src={project.gallery[2]}
           fill="true"
           className="object-cover rounded-lg"
+          alt="Fifth Project Image"
         />
       </div>
     </section>

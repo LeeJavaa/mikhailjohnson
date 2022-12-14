@@ -61,6 +61,7 @@ export default function TextCarousel(props) {
           src={project.carousel_image}
           fill="true"
           className="object-cover rounded-lg"
+          alt="Second Project Image"
         />
       </div>
     </div>
