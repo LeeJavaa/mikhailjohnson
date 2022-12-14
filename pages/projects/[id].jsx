@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar';
 import ProjectNav from '../../components/ProjectNav';
 import Gallery from '../../components/Gallery';
 import TextCarousel from '../../components/TextCarousel';
+import CustomCursor from '../../components/CustomCursor';
 
 export default function Detail({ project, nextProject, prevProject }) {
   return (
@@ -14,6 +15,7 @@ export default function Detail({ project, nextProject, prevProject }) {
             src={project.display_image}
             fill="true"
             className="object-cover rounded-lg"
+            alt="Project Main Display Image"
           />
         </div>
         <div>

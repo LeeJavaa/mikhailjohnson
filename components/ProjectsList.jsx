@@ -18,6 +18,7 @@ export default function ProjectsList() {
                 src={project.display_image}
                 fill="true"
                 className=" object-cover rounded-lg"
+                alt="Project Display Image"
               />
             </div>
           </Link>
