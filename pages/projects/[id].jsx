@@ -1,3 +1,4 @@
+import { useContext, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import projects from '../../data/projects';
@@ -5,9 +6,14 @@ import Navbar from '../../components/Navbar';
 import ProjectNav from '../../components/ProjectNav';
 import Gallery from '../../components/Gallery';
 import TextCarousel from '../../components/TextCarousel';
+import { CursorContext } from '../../components/CursorManager';
 
 export default function Detail({ project, nextProject, prevProject }) {
   const { ref: refQuote, inView: quoteInView } = useInView();
+  const { setSize } = useContext(CursorContext);
+  useEffect(() => {
+    setSize('small');
+  }, []);
 
   return (
     <main className="w-screen h-fit bg-black text-offWhite">

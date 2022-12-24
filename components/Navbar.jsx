@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { IconContext } from 'react-icons';
 
 export default function Navbar(props) {
   const { current } = props;
@@ -36,22 +38,49 @@ export default function Navbar(props) {
         </Link>
       )}
       {current === 'main' && (
-        <Link
-          href="/about"
-          className="text-offWhite font-light text-lg lg:text-xl"
-        >
-          ab<span className="italic">o</span>ut
-        </Link>
+        <div className="flex group">
+          {/* eslint-disable react/jsx-no-constructed-context-values */}
+          <span className="pt-2 base-translate-x opacity-0 group-hover:opacity-100 group-hover:-translate-x-2 transition-all ease-out duration-500">
+            <IconContext.Provider value={{ size: 16, color: 'white' }}>
+              <AiOutlineArrowRight />
+            </IconContext.Provider>
+          </span>
+          <Link
+            href="/about"
+            className="text-offWhite font-light text-lg lg:text-xl group-hover:text-white"
+          >
+            ab<span className="italic">o</span>ut
+          </Link>
+        </div>
       )}
       {current === 'detail' && (
-        <Link href="/" className="text-offWhite font-light text-lg lg:text-xl">
-          b<span className="italic">a</span>ck
-        </Link>
+        <div className="flex group">
+          {/* eslint-disable react/jsx-no-constructed-context-values */}
+          <span className="pt-2 base-translate-x opacity-0 group-hover:opacity-100 group-hover:-translate-x-2 transition-all ease-out duration-500">
+            <IconContext.Provider value={{ size: 16, color: 'white' }}>
+              <AiOutlineArrowRight />
+            </IconContext.Provider>
+          </span>
+          <Link
+            href="/"
+            className="text-offWhite font-light text-lg lg:text-xl group-hover:text-white"
+          >
+            b<span className="italic">a</span>ck
+          </Link>
+        </div>
       )}
       {current === 'about' && (
-        <Link href="/" className="text-black font-light text-lg lg:text-xl">
-          w<span className="italic">o</span>rk
-        </Link>
+        <div className="flex group">
+          {/* eslint-disable react/jsx-no-constructed-context-values */}
+          <span className="pt-2 base-translate-x opacity-0 group-hover:opacity-100 group-hover:-translate-x-2 transition-all ease-out duration-500">
+            <IconContext.Provider value={{ size: 16, color: 'black' }}>
+              <AiOutlineArrowRight />
+            </IconContext.Provider>
+          </span>
+          <Link href="/" className="text-black font-light text-lg lg:text-xl">
+            w<span className="italic">o</span>rk
+          </Link>
+        </div>
       )}
     </nav>
   );

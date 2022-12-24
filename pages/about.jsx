@@ -36,47 +36,57 @@ export default function About() {
               className="flex opacity-0 animate-floatIn"
               style={{ animationDelay: '1.15s', animationFillMode: 'forwards' }}
             >
-              email
-              <span className=" pl-1 pt-1.5 lg:pt-2.5">
-                <IconContext.Provider value={{ size: 12 }}>
-                  <BsArrowUpRight />
-                </IconContext.Provider>
-              </span>
+              <p className="flex group hover:cursor-pointer">
+                email
+                <span className=" pl-1 pt-1.5 lg:pt-2.5 group-hover:rotate-45 transition-all duration-300 ease-out group-hover:pt-1.5">
+                  <IconContext.Provider value={{ size: 12 }}>
+                    <BsArrowUpRight />
+                  </IconContext.Provider>
+                </span>
+              </p>
             </li>
             <li
               className="flex opacity-0 animate-floatIn"
               style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}
             >
-              <a href="https://www.instagram.com/mikhail_johnson/">instagram</a>
-              <span className=" pl-1 pt-1.5 lg:pt-2.5">
-                <IconContext.Provider value={{ size: 12 }}>
-                  <BsArrowUpRight />
-                </IconContext.Provider>
-              </span>
+              <p className="flex group hover:cursor-pointer">
+                <a href="https://www.instagram.com/mikhail_johnson/">
+                  instagram
+                </a>
+                <span className=" pl-1 pt-1.5 lg:pt-2.5 group-hover:rotate-45 transition-all duration-300 ease-out group-hover:pt-1.5">
+                  <IconContext.Provider value={{ size: 12 }}>
+                    <BsArrowUpRight />
+                  </IconContext.Provider>
+                </span>
+              </p>
             </li>
             <li
               className="flex opacity-0 animate-floatIn"
               style={{ animationDelay: '1.25s', animationFillMode: 'forwards' }}
             >
-              facebook
-              <span className=" pl-1 pt-1.5 lg:pt-2.5">
-                <IconContext.Provider value={{ size: 12 }}>
-                  <BsArrowUpRight />
-                </IconContext.Provider>
-              </span>
+              <p className="flex group hover:cursor-pointer">
+                facebook
+                <span className=" pl-1 pt-1.5 lg:pt-2.5 group-hover:rotate-45 transition-all duration-300 ease-out group-hover:pt-1.5">
+                  <IconContext.Provider value={{ size: 12 }}>
+                    <BsArrowUpRight />
+                  </IconContext.Provider>
+                </span>
+              </p>
             </li>
             <li
               className="flex opacity-0 animate-floatIn"
               style={{ animationDelay: '1.3s', animationFillMode: 'forwards' }}
             >
-              <a href="https://www.linkedin.com/in/mikhail-johnson-1148121a1/">
-                linkedin
-              </a>
-              <span className=" pl-1 pt-1.5 lg:pt-2.5">
-                <IconContext.Provider value={{ size: 12 }}>
-                  <BsArrowUpRight />
-                </IconContext.Provider>
-              </span>
+              <p className="flex group hover:cursor-pointer">
+                <a href="https://www.linkedin.com/in/mikhail-johnson-1148121a1/">
+                  linkedin
+                </a>
+                <span className=" pl-1 pt-1.5 lg:pt-2.5 group-hover:rotate-45 transition-all duration-300 ease-out group-hover:pt-1.5">
+                  <IconContext.Provider value={{ size: 12 }}>
+                    <BsArrowUpRight />
+                  </IconContext.Provider>
+                </span>
+              </p>
             </li>
           </ul>
         </div>

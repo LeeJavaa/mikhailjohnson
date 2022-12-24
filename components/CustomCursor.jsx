@@ -1,9 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { IconContext } from 'react-icons';
+import { CursorContext } from './CursorManager';
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);
   const path = useRouter().asPath;
+
+  const { size } = useContext(CursorContext);
 
   useEffect(() => {
     document.addEventListener('mousemove', (event) => {
@@ -16,10 +21,24 @@ export default function CustomCursor() {
 
   return (
     <div
-      className={`app-cursor z-20 rounded-full w-4 h-4 pointer-events-none overflow-hidden translate-x-0 translate-y-0 fixed blur-[0.5px] ease-in-out duration-[30ms] hidden lg:block ${
+      className={`app-cursor z-20 rounded-full pointer-events-none overflow-hidden translate-x-0 translate-y-0 fixed blur-[0.5px] ease-linear duration-[50ms] hidden lg:block ${
         path.toLowerCase().includes('about') ? 'bg-black' : 'bg-white'
-      }`}
+      } ${size === 'small' ? 'w-4 h-4' : ' w-28 h-28'}`}
       ref={cursorRef}
-    />
+    >
+      {size !== 'small' && (
+        <div
+          className="w-full h-full grid place-content-center animate-cursorRotate"
+          style={{
+            animationFillMode: 'forwards',
+          }}
+        >
+          {/* eslint-disable react/jsx-no-constructed-context-values */}
+          <IconContext.Provider value={{ size: 24 }}>
+            <AiOutlineArrowRight />
+          </IconContext.Provider>
+        </div>
+      )}
+    </div>
   );
 }

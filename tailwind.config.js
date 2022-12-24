@@ -19,6 +19,7 @@ module.exports = {
         fadeLow: 'opacityFade 1s ease-out',
         floatIn: 'floatIn 1s ease-in-out',
         floatInCover: 'floatInCover 1s ease-in-out',
+        cursorRotate: 'cursorRotate 0.4s ease-in-out',
       },
       keyframes: {
         textLoop1: {
@@ -89,6 +90,10 @@ module.exports = {
         floatInCover: {
           '0%': { opacity: '0%', transform: 'translateY(5%)' },
           '100%': { opacity: '100%', transform: 'translateY(0%)' },
+        },
+        cursorRotate: {
+          '0%': { transform: 'rotate(0)', opacity: '0%' },
+          '100%': { transform: 'rotate(-45deg)', opacity: '100%' },
         },
       },
     },
