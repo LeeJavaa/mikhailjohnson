@@ -3,7 +3,14 @@ import Image from 'next/image';
 export default function TextCarousel(props) {
   const { project } = props;
   return (
-    <div id="carousel-container" className="relative h-28 lg:h-64">
+    <div
+      id="carousel-container"
+      className="opacity-0 animate-floatIn relative h-28 lg:h-64"
+      style={{
+        animationDelay: '1.05s',
+        animationFillMode: 'forwards',
+      }}
+    >
       <div
         id="carousel-text"
         className="absolute flex gap-4 overflow-hidden w-full top-1/2 -translate-y-1/2 whitespace-nowrap font-bold text-4xl uppercase lg:text-5xl"

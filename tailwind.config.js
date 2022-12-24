@@ -18,6 +18,7 @@ module.exports = {
         marque2: 'moveRtl2 15s linear infinite',
         fadeLow: 'opacityFade 1s ease-out',
         floatIn: 'floatIn 1s ease-in-out',
+        floatInCover: 'floatInCover 1s ease-in-out',
       },
       keyframes: {
         textLoop1: {
@@ -83,6 +84,10 @@ module.exports = {
         },
         floatIn: {
           '0%': { opacity: '0%', transform: 'translateY(15%)' },
+          '100%': { opacity: '100%', transform: 'translateY(0%)' },
+        },
+        floatInCover: {
+          '0%': { opacity: '0%', transform: 'translateY(5%)' },
           '100%': { opacity: '100%', transform: 'translateY(0%)' },
         },
       },
