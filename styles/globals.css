@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .base-translate {
+    @apply translate-y-[15%];
+  }
+
+  .base-text-translate {
+    @apply translate-y-[40%];
+  }
+
+  .base-scale {
+    @apply scale-90;
+  }
+}
+
 ::selection {
   background: #ccb800;
+}
+
+.slideDiv {
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, black 50%, white 50%);
+  animation: slideDivBg 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDivBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -100%;
+  }
 }

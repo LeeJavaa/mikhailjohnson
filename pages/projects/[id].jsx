@@ -1,3 +1,4 @@
+import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import projects from '../../data/projects';
 import Navbar from '../../components/Navbar';
@@ -6,10 +7,18 @@ import Gallery from '../../components/Gallery';
 import TextCarousel from '../../components/TextCarousel';
 
 export default function Detail({ project, nextProject, prevProject }) {
+  const { ref: refQuote, inView: quoteInView } = useInView();
+
   return (
     <main className="w-screen h-fit bg-black text-offWhite">
       <div className="grid gap-6 lg:gap-10 w-80 mx-auto lg:w-10/12 2xl:gap-10">
-        <div className="relative w-full h-44 rounded-lg mx-auto top-20 lg:w-full lg:h-[70vh] lg:top-24 2xl:h-[75vh]">
+        <div
+          className="opacity-0 animate-floatInCover relative w-full h-44 rounded-lg mx-auto top-20 lg:w-full lg:h-[70vh] lg:top-24 2xl:h-[75vh]"
+          style={{
+            animationDelay: '0.25s',
+            animationFillMode: 'forwards',
+          }}
+        >
           <Image
             src={project.display_image}
             fill="true"
@@ -17,7 +26,13 @@ export default function Detail({ project, nextProject, prevProject }) {
             alt="Project Main Display Image"
           />
         </div>
-        <div>
+        <div
+          className="opacity-0 animate-floatInCover lg:animate-floatIn"
+          style={{
+            animationDelay: '0.5s',
+            animationFillMode: 'forwards',
+          }}
+        >
           <h1 className="font-bold text-5xl mt-16 lg:mt-20">{project.name}</h1>
           <div className="flex justify-between pt-2">
             <h3 className="font-light italic text-xl 2xl:text-2xl">
@@ -28,13 +43,25 @@ export default function Detail({ project, nextProject, prevProject }) {
             </h4>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-2">
+        <div
+          className="opacity-0 animate-floatIn grid grid-cols-1 gap-2"
+          style={{
+            animationDelay: '0.75s',
+            animationFillMode: 'forwards',
+          }}
+        >
           <h2 className="text-xl font-bold lg:text-3xl">About</h2>
           <p className="text-justify lg:text-lg lg:w-3/5">
             {project.about.toLowerCase()}
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-2">
+        <div
+          className="opacity-0 animate-floatIn grid grid-cols-1 gap-2"
+          style={{
+            animationDelay: '0.9s',
+            animationFillMode: 'forwards',
+          }}
+        >
           <h2 className="text-xl font-bold lg:text-3xl lg:text-right">Roles</h2>
           <div className="grid grid-cols-1 lg:text-lg lg:text-right">
             {project.roles.map((role) => (
@@ -45,7 +72,10 @@ export default function Detail({ project, nextProject, prevProject }) {
         <TextCarousel project={project} />
         <div
           id="quote-container"
-          className="w-full my-12 grid gap-2 lg:w-3/5 lg:gap-6"
+          className={`opacity-0 base-translate lg:base-text-translate duration-[1.5s] ease-out w-full my-12 grid gap-2 lg:w-3/5 lg:gap-6 ${
+            quoteInView ? 'opacity-100 translate-y-0' : ''
+          }`}
+          ref={refQuote}
         >
           <h1 className="font-bold text-5xl lg:text-7xl">
             &quot;{project.quote.toLowerCase()}&quot;
