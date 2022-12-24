@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import Link from 'next/link';
 import projects from '../data/projects';
+import { CursorContext } from './CursorManager';
 
 export default function ProjectsList() {
+  // refs for all projects
   const { ref: ref1, inView: elmentOneVisible } = useInView();
   const { ref: ref2, inView: elmentTwoVisible } = useInView();
   const { ref: ref3, inView: elmentThreeVisible } = useInView();
@@ -15,6 +17,9 @@ export default function ProjectsList() {
   const { ref: ref8, inView: elementEightVisible } = useInView();
   const { ref: ref9, inView: elementNineVisible } = useInView();
   const { ref: ref10, inView: elementTenVisible } = useInView();
+
+  // context for cursor hover
+  const { setSize } = useContext(CursorContext);
 
   return (
     <div className="w-fit mx-auto grid gap-14 py-7 lg:grid-cols-2 lg:gap-x-10 lg:gap-y-24 lg:w-10/12">
@@ -27,16 +32,22 @@ export default function ProjectsList() {
       >
         <Link href={`/projects/${projects[0].id}`}>
           <div
-            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] ${
+            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] hover:cursor-none ${
               elmentOneVisible ? 'opacity-100 translate-y-0' : ''
             }`}
             ref={ref1}
+            onMouseEnter={() => {
+              setSize('large');
+            }}
+            onMouseLeave={() => {
+              setSize('small');
+            }}
           >
             <Image
               src={projects[0].display_image}
               fill="true"
-              className={` object-cover rounded-lg base-scale duration-1000 ease-out ${
-                elmentOneVisible ? 'scale-100' : ''
+              className={` object-cover rounded-lg base-scale duration-1000 ease-out lg:grayscale-[35%] lg:hover:grayscale-0 ${
+                elmentOneVisible ? 'scale-100 lg:hover:scale-[103%]' : ''
               }`}
               alt="Project Display Image"
             />
@@ -63,16 +74,22 @@ export default function ProjectsList() {
       >
         <Link href={`/projects/${projects[1].id}`}>
           <div
-            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] ${
+            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] hover:cursor-none ${
               elmentThreeVisible ? 'opacity-100 translate-y-0' : ''
             }`}
             ref={ref3}
+            onMouseEnter={() => {
+              setSize('large');
+            }}
+            onMouseLeave={() => {
+              setSize('small');
+            }}
           >
             <Image
               src={projects[1].display_image}
               fill="true"
-              className={` object-cover rounded-lg base-scale duration-1000 ease-out ${
-                elmentThreeVisible ? 'scale-100' : ''
+              className={` object-cover rounded-lg base-scale duration-1000 ease-out lg:grayscale-[35%] lg:hover:grayscale-0 ${
+                elmentThreeVisible ? 'scale-100 lg:hover:scale-[103%]' : ''
               }`}
               alt="Project Display Image"
             />
@@ -99,16 +116,22 @@ export default function ProjectsList() {
       >
         <Link href={`/projects/${projects[2].id}`}>
           <div
-            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] ${
+            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] hover:cursor-none ${
               elementFiveVisible ? 'opacity-100 translate-y-0' : ''
             }`}
             ref={ref5}
+            onMouseEnter={() => {
+              setSize('large');
+            }}
+            onMouseLeave={() => {
+              setSize('small');
+            }}
           >
             <Image
               src={projects[2].display_image}
               fill="true"
-              className={` object-cover rounded-lg base-scale duration-1000 ease-out ${
-                elementFiveVisible ? 'scale-100' : ''
+              className={` object-cover rounded-lg base-scale duration-1000 ease-out lg:grayscale-[35%] lg:hover:grayscale-0 ${
+                elementFiveVisible ? 'scale-100 lg:hover:scale-[103%]' : ''
               }`}
               alt="Project Display Image"
             />
@@ -135,16 +158,22 @@ export default function ProjectsList() {
       >
         <Link href={`/projects/${projects[3].id}`}>
           <div
-            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] ${
+            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] hover:cursor-none ${
               elementSevenVisible ? 'opacity-100 translate-y-0' : ''
             }`}
             ref={ref7}
+            onMouseEnter={() => {
+              setSize('large');
+            }}
+            onMouseLeave={() => {
+              setSize('small');
+            }}
           >
             <Image
               src={projects[3].display_image}
               fill="true"
-              className={` object-cover rounded-lg base-scale duration-1000 ease-out ${
-                elementSevenVisible ? 'scale-100' : ''
+              className={` object-cover rounded-lg base-scale duration-1000 ease-out lg:grayscale-[35%] lg:hover:grayscale-0 ${
+                elementSevenVisible ? 'scale-100 lg:hover:scale-[103%]' : ''
               }`}
               alt="Project Display Image"
             />
@@ -171,16 +200,22 @@ export default function ProjectsList() {
       >
         <Link href={`/projects/${projects[4].id}`}>
           <div
-            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] ${
+            className={`base-translate opacity-0 transition-all duration-1000 ease-out relative w-full h-96 rounded-lg lg:h-[600px] 2xl:h-[740px] hover:cursor-none ${
               elementNineVisible ? 'opacity-100 translate-y-0' : ''
             }`}
             ref={ref9}
+            onMouseEnter={() => {
+              setSize('large');
+            }}
+            onMouseLeave={() => {
+              setSize('small');
+            }}
           >
             <Image
               src={projects[4].display_image}
               fill="true"
-              className={` object-cover rounded-lg base-scale duration-1000 ease-out ${
-                elementNineVisible ? 'scale-100' : ''
+              className={` object-cover rounded-lg base-scale duration-1000 ease-out lg:grayscale-[35%] lg:hover:grayscale-0 ${
+                elementNineVisible ? 'scale-100 lg:hover:scale-[103%]' : ''
               }`}
               alt="Project Display Image"
             />

@@ -14,6 +14,10 @@
   .base-scale {
     @apply scale-90;
   }
+
+  .base-translate-x {
+    @apply -translate-x-4;
+  }
 }
 
 ::selection {
